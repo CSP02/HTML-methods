@@ -1,4 +1,4 @@
-![Methods](/Resouces/Methods.png)
+![Methods](https://github.com/Chandra-sekhar-pilla/HTML-methods/blob/main/Resources/Methods.png)
 
 # HTML methods
  A package that can handle methods in html(for non repetative code).
@@ -23,4 +23,4 @@
 ```
 
 # Output:
- ![MethodsOutput](/Resources/Output.png)
+ ![MethodsOutput](https://github.com/Chandra-sekhar-pilla/HTML-methods/blob/main/Resources/Output.png)
