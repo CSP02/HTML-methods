@@ -8,11 +8,22 @@
     <script src="Methods.js"></script>
 </head>
 <body>
-    <div class="CThis" as="test1">Writing this code at the beginning</div>
-    <p>The above code is the actual code and the below code is the copied one.</p>
-    <div class="PHere" as="test1"></div>
-    <div class="PHere" as="BottomCode"></div>
-    <p> leaving a space inorder to make sure the bottom one is the actual code and the above one is copied one.</p>
-    <div class="CThis" as="BottomCode">This is the code at bottom yet it will work</div>
+
+    <!--use the method name as the tag name i.e here test and commit are the method names-->
+    <test></test>
+    <commit></commit>
+
+    <!--
+        define the methods. That means here def tag is used to define the methods and name attribute as the method name
+        Remember that these def tags will be removed once the page is loaded so that you cannot see the code inside this def tags
+        So the code inside these tags only works once you call them using as a tag name
+        run this file and inspect the changes in html so you can know more
+    -->
+    <def name="test">
+        <p>Methods.js</p>
+    </def>
+    <def name="commit">
+        <p>commit</p>
+    </def>
 </body>
 </html>

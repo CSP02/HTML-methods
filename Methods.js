@@ -1,24 +1,28 @@
 window.onload = function () {
-    const listOfMethods = document.getElementsByClassName("CThis")
-    let methodName = []
-    let content = []
-    for (let i = 0; i < listOfMethods.length; i++) {
-        const cont = listOfMethods[i];
-        methodName.push(cont.getAttribute('as'))
-        content.push(cont.innerHTML)
+    let definition = document.getElementsByTagName('def')
+    let methodNames = []
+    let methodContent = []
+    let methodDefTags = []
+
+    for (let i = 0; i < definition.length; i++) {
+        let methodDefs = definition[i];
+        methodDefs.style.visibility = 'hidden'
+        methodNames.push(methodDefs.getAttribute('name'))
+        methodContent.push(methodDefs.innerHTML)
+        methodDefTags.push(methodDefs)
     }
 
-    var toPaste = document.getElementsByClassName("PHere")
-    for (let j = 0; j < methodName.length; j++) {
-        let methodN = methodName[j];
-        for (let i = 0; i < toPaste.length; i++) {
-            var element = toPaste[i];
-            const method = element.getAttribute('as')
-            if (methodN == method) {
-                element.innerHTML = content[j]
-            } else {
-                continue
-            }
+    for (let j = 0; j < methodNames.length; j++) {
+        const methodName = methodNames[j];
+        let methodCall = document.getElementsByTagName(methodName)
+        for (let k = 0; k < methodCall.length; k++) {
+            let tag = methodCall[k];
+            tag.innerHTML = methodContent[j]
         }
+    }
+
+    for (var l = 0; l < methodDefTags.length; l++) {
+        console.log(methodDefTags[l])
+        methodDefTags[l].remove()
     }
 }
