@@ -1,8 +1,31 @@
 window.onload = function () {
     let definition = document.getElementsByTagName('def')
+    let importStatements = document.getElementsByTagName('import')
     let methodNames = []
     let methodContent = []
     let methodDefTags = []
+    let DOMparser = new DOMParser()
+
+    for (let k = 0; k < importStatements.length; k++) {
+        let importStatement = importStatements[k]
+        let importFrom = importStatement.getAttribute('from')
+        let importTag = importStatement.getAttribute('name')
+
+        fetch(importFrom)
+            .then(response => {
+                response.text().then(data => {
+                    defTags = (DOMparser.parseFromString(data, 'text/html').body.getElementsByTagName('def'))
+                    for (let d = 0; d < defTags.length; d++){
+                        const def = defTags[d]
+                        const defAttr = def.getAttribute('name')
+                        
+                        if (importTag == defAttr) {
+                            importStatement.innerHTML = def.innerHTML
+                        }
+                    }
+                })
+            })
+    }
 
     for (let i = 0; i < definition.length; i++) {
         let methodDefs = definition[i];
@@ -22,7 +45,6 @@ window.onload = function () {
     }
 
     for (var l = 0; l < methodDefTags.length; l++) {
-        console.log(methodDefTags[l])
         methodDefTags[l].remove()
     }
 }

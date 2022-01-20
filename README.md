@@ -7,14 +7,12 @@
  Have you ever get frustated of writing the same code in html to get what you want. Then here you are use this package? to make it easy by defining your method using a **"def"** tag and **"name"** attribute to name your method.
 
 # Usage:
+**Using on same file (``<def>``):**
  - Methods package is very simple to use.
  - All you need to do is to define the method using **"def"** tag and **"name"** attribute.
  - And then to call the method you can use the value you provided in name attribute.
  - That's it.
- **Note: You can copy any code that means if you want to copy the code which is at the bottom it will work.**
-
-# Example:
-
+**Example**
 ```html
 <test></test>
 <commit></commit>
@@ -26,6 +24,31 @@
     <p>commit</p>
 </def>
 ```
+**Note: You can copy any code that means if you want to copy the code which is at the bottom it will work.**
+
+**Usage on other files (``<import>``):**
+- Defining of the tags can be done as usual (use the syntax shown in index.html).
+- Now use the instruction
+```html
+<import name="methodName" from="pathToTheSourceFile">
+```
+- The attribute ``name`` is the name of the tag and ``from`` is the path to that file
+**Example:**
+> index.html
+```html
+<def name="test">
+    <p>Methods.js</p>
+</def>
+```
+> anotherHtml.html
+```html
+<import name="test" from="index.html">
+```
+- This will automatically imports and includes the inner content of the def tags (methods) from index.html into anotherHtml.html file
+
+**NOTE: You have to include the Methods.js script in every file in which you are using ``<def>`` and ``import`` tags.**
+
+**NOTE: You can view index.html, anotherHtml.html and other html files in this repository to know more about the usage of Methods.js**
 
 ## NOTE:
 - Remember that these def tags will be removed once the page is loaded so that you cannot see the code inside this def tags
