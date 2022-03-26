@@ -6,12 +6,17 @@
 # What is Methods?
  Have you ever get frustated of writing the same code in html to get what you want. Then here you are use this package? to make it easy by defining your method using a **"def"** tag and **"name"** attribute to name your method.
 
+# Version info:
+ - Methods class - Added because the import is not working when ``window.onload`` is used in the user script because Methods.js uses the same event.
+ - Organised the folder structure
+ - As Methods class is available user can access in their own script only when using ``window.onload`` event. If the event is not used in user script there is no need to access the class they can just link methods.js and can use import tags. For more info visit [docs](https://the-atelier.ml/Pages/Methods/methods.html)
 # Usage:
 **Using on same file (``<def>``):**
  - Methods package is very simple to use.
  - All you need to do is to define the method using **"def"** tag and **"name"** attribute.
  - And then to call the method you can use the value you provided in name attribute.
  - That's it.
+
 **Example**
 ```html
 <test></test>
